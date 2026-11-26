@@ -2,11 +2,11 @@
     --emerald-dark: #0F3D2E;
     --emerald-mid: #1B5E46;
     --gold: #C8A24A;
-    --gold-light: #E5C97B;
-    --cream: #FBF9F3;
-    --card-bg: rgba(255, 255, 255, 0.94);
-    --text-dark: #1E2B25;
-    --text-muted: #5A6962;
+    --gold-light: #E8CF89;
+    --bg-trend: #F7F3EB;
+    --card-bg: #FFFFFF;
+    --text-dark: #1F2A24;
+    --text-muted: #5F6E66;
 }
 
 * {
@@ -17,15 +17,12 @@
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    /* Latar belakang batik geometris + aksen bunga lembut */
-    background-color: var(--cream);
+    background-color: var(--bg-trend);
     background-image:
-        radial-gradient(circle at 12% 18%, rgba(200, 162, 74, 0.16) 0%, rgba(200, 162, 74, 0.04) 24%, transparent 25%),
-        radial-gradient(circle at 88% 14%, rgba(27, 94, 70, 0.12) 0%, rgba(200, 162, 74, 0.06) 22%, transparent 23%),
-        radial-gradient(circle at 18% 82%, rgba(27, 94, 70, 0.11) 0%, transparent 26%),
-        radial-gradient(circle at 84% 78%, rgba(200, 162, 74, 0.15) 0%, transparent 25%),
-        repeating-linear-gradient(45deg, rgba(200, 162, 74, 0.06) 0px, rgba(200, 162, 74, 0.06) 2px, transparent 2px, transparent 22px),
-        repeating-linear-gradient(-45deg, rgba(27, 94, 70, 0.05) 0px, rgba(27, 94, 74, 0.05) 2px, transparent 2px, transparent 22px);
+        radial-gradient(circle at 15% 10%, rgba(232, 207, 137, 0.28) 0%, transparent 45%),
+        radial-gradient(circle at 85% 25%, rgba(27, 94, 70, 0.08) 0%, transparent 42%),
+        radial-gradient(circle at 50% 85%, rgba(200, 162, 74, 0.16) 0%, transparent 50%),
+        linear-gradient(180deg, #FAF7F2 0%, #F3EDE2 100%);
     background-attachment: fixed;
     color: var(--text-dark);
     line-height: 1.65;
@@ -43,19 +40,14 @@ body {
     text-align: center;
 }
 
-/* Cover Batik & Bunga */
+/* Cover Trend Modern */
 .cover {
     position: fixed;
     inset: 0;
-    background-color: var(--emerald-dark);
-    background-image:
-        radial-gradient(circle at 15% 20%, rgba(229, 201, 123, 0.24) 0%, rgba(200, 162, 74, 0.08) 26%, transparent 27%),
-        radial-gradient(circle at 85% 22%, rgba(229, 201, 123, 0.20) 0%, rgba(200, 162, 74, 0.06) 24%, transparent 25%),
-        radial-gradient(circle at 20% 82%, rgba(229, 201, 123, 0.18) 0%, transparent 28%),
-        radial-gradient(circle at 82% 80%, rgba(229, 201, 123, 0.22) 0%, transparent 27%),
-        repeating-linear-gradient(45deg, rgba(229, 201, 123, 0.08) 0px, rgba(229, 201, 123, 0.08) 2px, transparent 2px, transparent 26px),
-        repeating-linear-gradient(-45deg, rgba(229, 201, 123, 0.07) 0px, rgba(229, 201, 123, 0.07) 2px, transparent 2px, transparent 26px),
-        radial-gradient(circle at top, rgba(27, 94, 70, 0.85), rgba(15, 61, 46, 0.96));
+    background:
+        radial-gradient(circle at 50% 20%, rgba(232, 207, 137, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(46, 133, 101, 0.28) 0%, transparent 50%),
+        linear-gradient(160deg, #164A38 0%, #0D3326 100%);
     color: #FFFFFF;
     display: flex;
     align-items: center;
@@ -72,12 +64,14 @@ body {
 }
 
 .cover-content {
-    max-width: 500px;
-    padding: 32px 26px;
-    background: rgba(15, 61, 46, 0.65);
-    border: 1px solid rgba(229, 201, 123, 0.35);
-    border-radius: 24px;
-    backdrop-filter: blur(4px);
+    max-width: 480px;
+    width: 92%;
+    padding: 36px 26px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(232, 207, 137, 0.35);
+    border-radius: 28px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
 }
 
 .arabic-small {
@@ -90,8 +84,8 @@ body {
 .subtitle {
     letter-spacing: 3px;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    color: var(--gold);
+    font-size: 0.82rem;
+    color: var(--gold-light);
     margin-bottom: 10px;
 }
 
@@ -105,16 +99,16 @@ body {
 .date-cover {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.35rem;
-    margin-bottom: 30px;
-    color: #F4EFE3;
+    margin-bottom: 28px;
+    color: #F6F1E7;
 }
 
 .guest-box {
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(200, 162, 74, 0.5);
-    border-radius: 14px;
+    border: 1px solid rgba(232, 207, 137, 0.4);
+    border-radius: 16px;
     padding: 16px 22px;
-    margin-bottom: 28px;
+    margin-bottom: 26px;
 }
 
 .guest-box p {
@@ -130,7 +124,7 @@ body {
 
 /* Tombol */
 .btn-primary {
-    background-color: var(--gold);
+    background: linear-gradient(135deg, #D4AF5A 0%, #B88E35 100%);
     color: #FFFFFF;
     border: none;
     padding: 12px 28px;
@@ -143,11 +137,12 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    box-shadow: 0 8px 20px rgba(184, 142, 53, 0.28);
 }
 
 .btn-primary:hover {
-    background-color: #B08B36;
     transform: translateY(-2px);
+    filter: brightness(1.04);
 }
 
 .btn-outline {
@@ -157,7 +152,7 @@ body {
     padding: 10px 22px;
     border: 1.5px solid var(--emerald-dark);
     color: var(--emerald-dark);
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: var(--card-bg);
     text-decoration: none;
     border-radius: 50px;
     font-size: 0.9rem;
@@ -173,7 +168,7 @@ body {
 
 /* Section */
 .section {
-    padding: 70px 0;
+    padding: 72px 0;
 }
 
 .section-title {
@@ -185,8 +180,7 @@ body {
 
 /* Intro */
 .intro {
-    background-color: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(2px);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(250, 247, 242, 0.75) 100%);
 }
 
 .arabic {
@@ -214,13 +208,14 @@ body {
     font-family: 'Amiri', serif;
     font-size: 1.7rem;
     color: var(--emerald-dark);
-    background: var(--cream);
+    background: var(--card-bg);
+    border: 1px solid rgba(200, 162, 74, 0.35);
     border-left: 4px solid var(--gold);
-    border-right: 4px solid var(--gold);
-    padding: 14px 20px;
-    border-radius: 10px;
+    padding: 16px 20px;
+    border-radius: 14px;
     max-width: 620px;
     margin: 0 auto 10px;
+    box-shadow: 0 8px 24px rgba(15, 61, 46, 0.04);
 }
 
 .doa-arti {
@@ -243,10 +238,11 @@ body {
 .couple-card {
     background: var(--card-bg);
     padding: 34px 24px;
-    border-radius: 16px;
+    border-radius: 22px;
     width: 100%;
     max-width: 350px;
-    box-shadow: 0 10px 28px rgba(15, 61, 46, 0.08);
+    box-shadow: 0 12px 32px rgba(15, 61, 46, 0.07);
+    border: 1px solid rgba(200, 162, 74, 0.25);
     border-top: 4px solid var(--gold);
 }
 
@@ -254,7 +250,7 @@ body {
     width: 68px;
     height: 68px;
     border-radius: 50%;
-    background: var(--cream);
+    background: #F7F3EB;
     border: 1.5px solid var(--gold);
     color: var(--emerald-dark);
     display: flex;
@@ -291,11 +287,9 @@ body {
 
 /* Countdown */
 .countdown-section {
-    background-color: var(--emerald-dark);
-    background-image:
-        radial-gradient(circle at 10% 30%, rgba(229, 201, 123, 0.16) 0%, transparent 25%),
-        radial-gradient(circle at 90% 70%, rgba(229, 201, 123, 0.16) 0%, transparent 25%),
-        repeating-linear-gradient(45deg, rgba(229, 201, 123, 0.06) 0px, rgba(229, 201, 123, 0.06) 2px, transparent 2px, transparent 24px);
+    background:
+        radial-gradient(circle at 50% 0%, rgba(232, 207, 137, 0.16) 0%, transparent 55%),
+        linear-gradient(155deg, #154736 0%, #0D3326 100%);
     color: #FFFFFF;
 }
 
@@ -312,11 +306,12 @@ body {
 }
 
 .time-box {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(229, 201, 123, 0.35);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(232, 207, 137, 0.35);
+    border-radius: 16px;
     padding: 14px;
     min-width: 78px;
+    backdrop-filter: blur(6px);
 }
 
 .time-box span {
@@ -350,8 +345,9 @@ body {
 .event-card {
     background: var(--card-bg);
     padding: 30px 24px;
-    border-radius: 16px;
-    box-shadow: 0 10px 28px rgba(15, 61, 46, 0.08);
+    border-radius: 22px;
+    box-shadow: 0 12px 32px rgba(15, 61, 46, 0.07);
+    border: 1px solid rgba(200, 162, 74, 0.22);
     border-bottom: 3px solid var(--emerald-mid);
 }
 
@@ -393,17 +389,17 @@ body {
 
 /* Rekening / Tanda Kasih */
 .gift-section {
-    background-color: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(2px);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.92) 100%);
 }
 
 .rekening-card {
     max-width: 440px;
     margin: 20px auto 0;
-    background: var(--cream);
-    border: 1.5px solid var(--gold);
-    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1.5px solid rgba(200, 162, 74, 0.65);
+    border-radius: 20px;
     padding: 24px 20px;
+    box-shadow: 0 10px 26px rgba(15, 61, 46, 0.05);
 }
 
 .bank-label {
@@ -464,7 +460,7 @@ body {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #D5DDD8;
-    border-radius: 10px;
+    border-radius: 12px;
     font-family: inherit;
     font-size: 0.95rem;
     background-color: var(--card-bg);
@@ -489,9 +485,9 @@ body {
 .wish-item {
     background: var(--card-bg);
     padding: 15px 18px;
-    border-radius: 12px;
+    border-radius: 14px;
     border-left: 4px solid var(--emerald-mid);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 6px 18px rgba(15, 61, 46, 0.04);
 }
 
 .wish-header {
@@ -517,8 +513,7 @@ body {
 
 /* Footer */
 .footer {
-    background-color: var(--emerald-dark);
-    background-image: repeating-linear-gradient(45deg, rgba(229, 201, 123, 0.05) 0px, rgba(229, 201, 123, 0.05) 2px, transparent 2px, transparent 24px);
+    background: linear-gradient(160deg, #144333 0%, #0B2B20 100%);
     color: #FFFFFF;
     padding: 50px 0;
 }
@@ -566,5 +561,4 @@ body {
     .event-grid {
         grid-template-columns: 1fr 1fr;
     }
-        }
-    
+            }
