@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Pernikahan | Husnul Khotimah & Muhammad Khoir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Audio Latar Wedding Nasheed -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="wedding-nasheed.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Tombol Kontrol Musik Melayang -->
+  <button id="music-toggle" class="music-btn hidden" aria-label="Putar atau Jeda Wedding Nasheed" title="Wedding Nasheed">
+    <span class="music-disc" id="music-disc">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18V5l12-2v13"></path>
+        <circle cx="6" cy="18" r="3"></circle>
+        <circle cx="18" cy="16" r="3"></circle>
+      </svg>
+    </span>
+  </button>
+
+  <!-- Cover / Layar Pembuka -->
+  <section id="cover" class="cover-overlay">
+    <svg class="lantern lantern-left" viewBox="0 0 60 150" aria-hidden="true">
+      <line x1="30" y1="0" x2="30" y2="35" stroke="#d4af37" stroke-width="1.5" />
+      <path d="M22 35 Q30 24 38 35 Z" fill="#d4af37" />
+      <polygon points="18,42 42,42 47,85 30,104 13,85" fill="rgba(212,175,55,0.16)" stroke="#d4af37" stroke-width="1.5" />
+      <circle cx="30" cy="68" r="7" fill="#f7e39c" opacity="0.85" />
+      <line x1="30" y1="104" x2="30" y2="122" stroke="#d4af37" stroke-width="1.5" />
+      <circle cx="30" cy="125" r="3" fill="#d4af37" />
+    </svg>
+    <svg class="lantern lantern-right" viewBox="0 0 60 150" aria-hidden="true">
+      <line x1="30" y1="0" x2="30" y2="48" stroke="#d4af37" stroke-width="1.5" />
+      <path d="M22 48 Q30 37 38 48 Z" fill="#d4af37" />
+      <polygon points="18,55 42,55 47,98 30,117 13,98" fill="rgba(212,175,55,0.16)" stroke="#d4af37" stroke-width="1.5" />
+      <circle cx="30" cy="81" r="7" fill="#f7e39c" opacity="0.85" />
+      <line x1="30" y1="117" x2="30" y2="135" stroke="#d4af37" stroke-width="1.5" />
+      <circle cx="30" cy="138" r="3" fill="#d4af37" />
+    </svg>
+
+    <div class="cover-card mihrab-frame">
+      <svg class="rub-el-hizb" viewBox="0 0 64 64" width="42" height="42" aria-hidden="true">
+        <rect x="14" y="14" width="36" height="36" fill="none" stroke="#d4af37" stroke-width="1.6" />
+        <rect x="14" y="14" width="36" height="36" fill="none" stroke="#d4af37" stroke-width="1.6" transform="rotate(45 32 32)" />
+        <circle cx="32" cy="32" r="5" fill="#d4af37" />
+      </svg>
+
+      <p class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+      <p class="subtitle">Undangan Walimatul 'Urs</p>
+      <h1 class="couple-title">Husnul <span>&amp;</span> Khoir</h1>
+      <p class="wedding-date">Minggu, 14 Maret 2027</p>
+
+      <div class="guest-box">
+        <span class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i:</span>
+        <strong id="guest-name" class="guest-name">Tamu Undangan</strong>
+      </div>
+
+      <button id="open-btn" class="btn-primary">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        Buka Undangan
+      </button>
+    </div>
+  </section>
+
+  <!-- Konten Utama Undangan -->
+  <main id="main-content" class="main-wrapper locked">
+
+    <!-- Section 1: Beranda & Ayat -->
+    <section id="beranda" class="section hero-section">
+      <div class="container">
+        <svg class="rub-el-hizb center-ornament" viewBox="0 0 64 64" width="38" height="38" aria-hidden="true">
+          <rect x="14" y="14" width="36" height="36" fill="none" stroke="#c9a24b" stroke-width="1.8" />
+          <rect x="14" y="14" width="36" height="36" fill="none" stroke="#c9a24b" stroke-width="1.8" transform="rotate(45 32 32)" />
+          <circle cx="32" cy="32" r="4.5" fill="#c9a24b" />
+        </svg>
+
+        <p class="arabic-text gold-text">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</p>
+        <p class="intro-text">
+          Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, kami bermaksud menyelenggarakan akad dan resepsi pernikahan putra-putri kami:
+        </p>
+
+        <div class="quran-card islamic-border">
+          <p class="arabic-verse">
+            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+          </p>
+          <p class="verse-translation">
+            "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang."
+          </p>
+          <span class="verse-source">(QS. Ar-Rum: 21)</span>
+        </div>
+
+        <!-- Hitung Mundur -->
+        <div class="countdown-wrapper">
+          <h3 class="section-mini-title">Menuju Hari Bahagia</h3>
+          <div class="countdown-grid">
+            <div class="time-box"><span id="days">00</span><small>Hari</small></div>
+            <div class="time-box"><span id="hours">00</span><small>Jam</small></div>
+            <div class="time-box"><span id="minutes">00</span><small>Menit</small></div>
+            <div class="time-box"><span id="seconds">00</span><small>Detik</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Profil Mempelai (Ilustrasi Kartun Islami) -->
+    <section id="mempelai" class="section">
+      <div class="container">
+        <h2 class="section-title">Mempelai</h2>
+        <p class="section-desc">InsyaAllah akan melangsungkan pernikahan suci</p>
+
+        <div class="couple-grid">
+          <div class="profile-card islamic-border">
+            <div class="avatar-mihrab">
+              <svg viewBox="0 0 160 180" class="bride-svg" aria-label="Ilustrasi Pengantin Muslimah">
+                <defs>
+                  <linearGradient id="hijabGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#fffdf8" />
+                    <stop offset="100%" stop-color="#f2e6cf" />
+                  </linearGradient>
+                </defs>
+                <path d="M35 85 C35 38, 125 38, 125 85 L138 165 Q80 176 22 165 Z" fill="url(#hijabGrad)" stroke="#c9a24b" stroke-width="2" />
+                <path d="M58 46 L65 34 L73 43 L80 30 L87 43 L95 34 L102 46 Z" fill="#d4af37" />
+                <ellipse cx="80" cy="76" rx="23" ry="27" fill="#fde3ce" />
+                <path d="M56 72 C56 48, 104 48, 104 72 C100 56, 60 56, 56 72 Z" fill="#e8d5b0" />
+                <path d="M68 74 Q72 70 76 74" fill="none" stroke="#4a3728" stroke-width="2" stroke-linecap="round" />
+                <path d="M84 74 Q88 70 92 74" fill="none" stroke="#4a3728" stroke-width="2" stroke-linecap="round" />
+                <circle cx="66" cy="81" r="3" fill="#f5a89a" opacity="0.55" />
+                <circle cx="94" cy="81" r="3" fill="#f5a89a" opacity="0.55" />
+                <path d="M74 87 Q80 93 86 87" fill="none" stroke="#b85d52" stroke-width="2" stroke-linecap="round" />
+                <path d="M104 75 Q114 105 110 135" fill="none" stroke="#ffffff" stroke-width="5" stroke-dasharray="2 4" stroke-linecap="round" />
+                <path d="M48 135 Q80 148 112 135 L118 168 L42 168 Z" fill="#0f4734" opacity="0.95" />
+              </svg>
+            </div>
+            <h3 class="bride-name">Husnul Khotimah</h3>
+            <p class="family-info">
+              Putri ke-5 dari Bapak Nurrochman Surip (Alm) &amp; Ibu Sangirah
+            </p>
+          </div>
+
+          <div class="ampersand-divider">&amp;</div>
+
+          <div class="profile-card islamic-border">
+            <div class="avatar-mihrab">
+              <svg viewBox="0 0 160 180" class="groom-svg" aria-label="Ilustrasi Pengantin Pria Islami">
+                <path d="M56 54 L58 34 Q80 28 102 34 L104 54 Z" fill="#fdfbf7" stroke="#c9a24b" stroke-width="2" />
+                <rect x="57" y="49" width="46" height="4" fill="#d4af37" />
+                <circle cx="55" cy="76" r="5" fill="#f7d5ba" />
+                <circle cx="105" cy="76" r="5" fill="#f7d5ba" />
+                <ellipse cx="80" cy="76" rx="24" ry="27" fill="#fde3ce" />
+                <path d="M67 68 Q72 66 76 68" fill="none" stroke="#3b2b1e" stroke-width="2" stroke-linecap="round" />
+                <path d="M84 68 Q88 66 93 68" fill="none" stroke="#3b2b1e" stroke-width="2" stroke-linecap="round" />
+                <circle cx="71" cy="75" r="2.3" fill="#2c2219" />
+                <circle cx="89" cy="75" r="2.3" fill="#2c2219" />
+                <path d="M74 87 Q80 93 86 87" fill="none" stroke="#9e5449" stroke-width="2" stroke-linecap="round" />
+                <rect x="72" y="100" width="16" height="14" fill="#f7d5ba" />
+                <path d="M34 168 L40 124 Q80 112 120 124 L126 168 Z" fill="#0b3828" stroke="#c9a24b" stroke-width="1.5" />
+                <path d="M68 113 L80 126 L92 113" fill="none" stroke="#d4af37" stroke-width="2.5" />
+                <circle cx="80" cy="136" r="2.5" fill="#d4af37" />
+                <circle cx="80" cy="148" r="2.5" fill="#d4af37" />
+                <circle cx="80" cy="160" r="2.5" fill="#d4af37" />
+              </svg>
+            </div>
+            <h3 class="bride-name">Muhammad Khoir</h3>
+            <p class="family-info">
+              Putra pertama dari Bapak Jahrudin &amp; Ibu Syahriah
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Waktu & Lokasi Acara -->
+    <section id="acara" class="section">
+      <div class="container">
+        <h2 class="section-title">Waktu &amp; Tempat</h2>
+        <p class="section-desc">Minggu, 14 Maret 2027</p>
+
+        <div class="event-grid">
+          <div class="event-card islamic-border">
+            <h3>Akad Nikah</h3>
+            <p class="event-time">08.00 – 09.00 WIB</p>
+            <p class="event-note">Minggu, 14 Maret 2027</p>
+          </div>
+          <div class="event-card islamic-border">
+            <h3>Resepsi</h3>
+            <p class="event-time">09.00 WIB – Selesai</p>
+            <p class="event-note">Minggu, 14 Maret 2027</p>
+          </div>
+        </div>
+
+        <div class="location-card islamic-border">
+          <h3>Kediaman Mempelai Perempuan</h3>
+          <p id="address-text" class="address-text">
+            Dusun Sikanco RT 02 / RW 05, Kec. Nusawungu, Kab. Cilacap, Jawa Tengah
+          </p>
+          <div class="btn-group">
+            <a href="https://maps.app.goo.gl/CbDvwqzAxEaKuGm97" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              Buka Google Maps
+            </a>
+            <button type="button" id="copy-address-btn" class="btn-outline">
+              Salin Alamat
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Tanda Kasih / Rekening -->
+    <section id="amplop" class="section">
+      <div class="container">
+        <h2 class="section-title">Tanda Kasih</h2>
+        <p class="section-desc">
+          Doa restu Bapak/Ibu/Saudara/i merupakan karunia terindah bagi kami. Namun apabila memberi merupakan tanda kasih, dapat disalurkan melalui:
+        </p>
+
+        <div class="bank-card islamic-border">
+          <span class="bank-label">Transfer Rekening</span>
+          <p id="account-number" class="account-number">801001010401534</p>
+          <p class="account-holder">a.n. Husnul Khotimah / Muhammad Khoir</p>
+          <button type="button" id="copy-rek-btn" class="btn-primary">
+            Salin Nomor Rekening
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: RSVP & Ucapan -->
+    <section id="rsvp" class="section">
+      <div class="container">
+        <h2 class="section-title">Konfirmasi &amp; Doa Restu</h2>
+        <p class="section-desc">Kirimkan ucapan dan konfirmasi kehadiran melalui WhatsApp</p>
+
+        <form id="rsvp-form" class="rsvp-card islamic-border">
+          <div class="form-group">
+            <label for="sender-name">Nama Anda</label>
+            <input type="text" id="sender-name" placeholder="Masukkan nama lengkap" required />
+          </div>
+          <div class="form-group">
+            <label for="attendance">Konfirmasi Kehadiran</label>
+            <select id="attendance">
+              <option value="InsyaAllah Hadir">InsyaAllah Hadir</option>
+              <option value="Maaf Belum Bisa Hadir">Maaf Belum Bisa Hadir</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="wish-message">Doa &amp; Ucapan</label>
+            <textarea id="wish-message" rows="3" placeholder="Barakallahu lakuma wa baraka 'alaikuma..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width">
+            Kirim ke WhatsApp &amp; Simpan Ucapan
+          </button>
+        </form>
+
+        <div id="wishes-list" class="wishes-list"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p class="arabic-text gold-text">بَارَكَ اللهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+      <p class="footer-doa">"Semoga Allah memberkahi kalian di waktu bahagia dan memberkahi kalian di waktu susah, serta mengumpulkan kalian berdua dalam kebaikan."</p>
+      <p class="footer-names">Husnul Khotimah &amp; Muhammad Khoir</p>
+    </footer>
+  </main>
+
+  <!-- Floating Bottom Icon Navigation Bar -->
+  <nav id="bottom-nav" class="bottom-nav hidden" aria-label="Navigasi Undangan">
+    <a href="#beranda" class="nav-item active" data-target="beranda" aria-label="Beranda">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </a>
+    <a href="#mempelai" class="nav-item" data-target="mempelai" aria-label="Mempelai">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+    </a>
+    <a href="#acara" class="nav-item" data-target="acara" aria-label="Acara dan Lokasi">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+    </a>
+    <a href="#amplop" class="nav-item" data-target="amplop" aria-label="Tanda Kasih">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="20 12 20 22 4 22 4 12"></polyline>
+        <rect x="2" y="7" width="20" height="5"></rect>
+        <line x1="12" y1="22" x2="12" y2="7"></line>
+        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+      </svg>
+    </a>
+    <a href="#rsvp" class="nav-item" data-target="rsvp" aria-label="RSVP dan Doa">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- Toast Notifikasi -->
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
