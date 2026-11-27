@@ -14,14 +14,15 @@ body{
   background-size:420px;
   background-repeat:repeat;
   background-attachment:fixed;
+  padding-bottom:70px;
 }
-/* LAPISAN DIPER TIPIS BIAR BATIK KELIATAN */
 section{
   padding:35px 22px;max-width:620px;margin:18px auto;
   background:rgba(255,253,248,.68);
   border-radius:22px;
   box-shadow:0 8px 25px rgba(0,0,0,.08);
   border:1px solid rgba(255,255,255,.7);
+  scroll-margin-top:20px;
 }
 .cover{
   min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
@@ -44,8 +45,26 @@ h2{font-family:'Playfair Display',serif;color:#5a6b4d;font-size:28px}
 .count b{font-size:22px;display:block}
 .btn2{display:inline-block;background:#c9a86a;color:white;padding:11px 22px;border-radius:25px;text-decoration:none;font-size:14px;font-weight:600;margin:8px 4px;border:none;cursor:pointer}
 input,select,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin:8px 0;font-family:inherit}
-.music-btn{position:fixed;bottom:18px;right:18px;background:#5a6b4d;color:white;width:52px;height:52px;border-radius:50%;border:none;font-size:22px;z-index:99;cursor:pointer}
+.music-btn{position:fixed;bottom:82px;right:18px;background:#5a6b4d;color:white;width:52px;height:52px;border-radius:50%;border:none;font-size:22px;z-index:99;cursor:pointer;box-shadow:0 5px 15px rgba(0,0,0,.2)}
 footer{padding:20px;font-size:12px;color:#555;background:rgba(255,253,248,.68);border-radius:22px;max-width:620px;margin:18px auto}
+/* NAVBAR BAWAH RESPONSIF */
+.navbar{
+  position:fixed;bottom:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+  border-top:1px solid #e8dfc9;
+  display:none;
+  justify-content:space-around;
+  padding:8px 5px calc(8px + env(safe-area-inset-bottom));
+  box-shadow:0 -5px 20px rgba(0,0,0,.08);
+}
+.navbar a{
+  text-decoration:none;color:#777;
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  font-size:10px;font-weight:600;flex:1;padding:4px 2px;border-radius:10px;
+}
+.navbar a span{font-size:20px;line-height:1}
+.navbar a.active{color:#5a6b4d;background:#f0f3ec}
 </style>
 </head>
 <body>
@@ -63,31 +82,31 @@ footer{padding:20px;font-size:12px;color:#555;background:rgba(255,253,248,.68);b
 </div>
 
 <div id="isi" style="display:none">
-<section>
+<section id="home">
   <h2>Bismillahirrahmanirrahim</h2><div class="divider"></div>
   <p style="font-size:14px;line-height:1.8">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami tercinta.</p>
   <img src="foto-pengantin.jpg" style="width:100%;border-radius:16px;margin-top:20px;aspect-ratio:4/5;object-fit:cover" alt="Husnul & Khoir">
 </section>
 
-<section>
+<section id="mempelai">
   <div class="card"><div class="nama">Husnul Khotimah</div><div class="ortu">Putri ke-5 dari pasangan<br><b>Bapak Nurrochman Surip (Alm)</b><br>& <b>Ibu Sangirah</b></div></div>
   <div style="font-family:'Great Vibes',cursive;font-size:38px;color:#c9a86a">&</div>
   <div class="card"><div class="nama">Muhammad Khoir</div><div class="ortu">Putra Pertama dari pasangan<br><b>Bapak Jahrudin</b><br>& <b>Ibu Syahriah</b></div></div>
 </section>
 
-<section><h2>Menuju Hari Bahagia</h2><div class="divider"></div><div class="count"><div><b id="d">0</b><span>Hari</span></div><div><b id="h">0</b><span>Jam</span></div><div><b id="m">0</b><span>Menit</span></div><div><b id="s">0</b><span>Detik</span></div></div></section>
-
-<section><h2>Detail Acara</h2><div class="divider"></div>
+<section id="acara"><h2>Menuju Hari Bahagia</h2><div class="divider"></div><div class="count"><div><b id="d">0</b><span>Hari</span></div><div><b id="h">0</b><span>Jam</span></div><div><b id="m">0</b><span>Menit</span></div><div><b id="s">0</b><span>Detik</span></div></div>
+<br>
+<h2>Detail Acara</h2><div class="divider"></div>
   <div class="card"><h3 style="color:#5a6b4d">🤍 Akad Nikah</h3><p style="margin:10px 0;line-height:1.7">Minggu, 14 Maret 2027<br><b>08.00 - 09.00 WIB</b></p></div>
   <div class="card"><h3 style="color:#5a6b4d">🎉 Resepsi</h3><p style="margin:10px 0;line-height:1.7">Minggu, 14 Maret 2027<br><b>09.00 WIB - Selesai</b></p></div>
   <div class="card"><h3 style="color:#5a6b4d">📍 Lokasi</h3><p style="margin:10px 0;line-height:1.7">Kediaman Mempelai Wanita<br>Dusun Sikanco RT 02 / RW 05, Nusawungu, Cilacap</p><a class="btn2" href="https://www.google.com/maps/search/?api=1&query=Dusun+Sikanco+Nusawungu+Cilacap" target="_blank">📍 Buka Google Maps</a></div>
 </section>
 
-<section><h2>Konfirmasi Kehadiran</h2><div class="divider"></div>
+<section id="rsvp"><h2>Konfirmasi Kehadiran</h2><div class="divider"></div>
   <div class="card"><input type="text" id="namaRSVP" placeholder="Nama Kamu"><select id="hadirRSVP"><option value="Hadir">Hadir</option><option value="Berhalangan">Berhalangan</option></select><textarea id="ucapanRSVP" placeholder="Ucapan / Doa untuk mempelai..."></textarea><button class="btn2" onclick="kirimRSVP()">Kirim via WhatsApp</button></div>
 </section>
 
-<section><h2>Kirim Hadiah</h2><div class="divider"></div>
+<section id="hadiah"><h2>Kirim Hadiah</h2><div class="divider"></div>
   <div class="card">
     <p style="font-size:14px;line-height:1.7">Doa restu Anda adalah hadiah terindah.<br>Namun jika berkenan memberi tanda kasih:</p><br>
     <div style="background:#f8f5ee;padding:18px;border-radius:12px;border:1px dashed #c9a86a">
@@ -103,6 +122,15 @@ footer{padding:20px;font-size:12px;color:#555;background:rgba(255,253,248,.68);b
 <footer>Made with Love • Husnul & Khoir • 14 Maret 2027</footer>
 </div>
 
+<!-- NAVBAR BAWAH -->
+<nav class="navbar" id="navbar">
+  <a href="#home" onclick="navKlik(this)"><span>🏠</span>Home</a>
+  <a href="#mempelai" onclick="navKlik(this)"><span>💍</span>Mempelai</a>
+  <a href="#acara" onclick="navKlik(this)"><span>📅</span>Acara</a>
+  <a href="#rsvp" onclick="navKlik(this)"><span>✉️</span>RSVP</a>
+  <a href="#hadiah" onclick="navKlik(this)"><span>🎁</span>Hadiah</a>
+</nav>
+
 <script>
 const params = new URLSearchParams(window.location.search);
 const to = params.get('to');
@@ -114,7 +142,17 @@ document.getElementById("h").innerText=Math.floor((diff%(1000*60*60*24))/(1000*6
 document.getElementById("m").innerText=Math.floor((diff%(1000*60*60))/(1000*60));
 document.getElementById("s").innerText=Math.floor((diff%(1000*60))/1000);},1000);
 let isPlaying=false;
-function bukaUndangan(){ document.getElementById('isi').style.display='block'; window.scrollTo({top:document.getElementById('isi').offsetTop,behavior:'smooth'}); toggleMusik(true); }
+function bukaUndangan(){
+  document.getElementById('cover').style.display='none';
+  document.getElementById('isi').style.display='block';
+  document.getElementById('navbar').style.display='flex';
+  window.scrollTo({top:0,behavior:'smooth'});
+  toggleMusik(true);
+}
+function navKlik(el){
+  document.querySelectorAll('.navbar a').forEach(a=>a.classList.remove('active'));
+  el.classList.add('active');
+}
 function toggleMusik(forcePlay){ var audio=document.getElementById('musik'); if(forcePlay||!isPlaying){ audio.play(); isPlaying=true; document.getElementById('btnMusik').innerText='🔊'; } else { audio.pause(); isPlaying=false; document.getElementById('btnMusik').innerText='🔇'; } }
 function kirimRSVP(){
   var nomorWA = "6285171630292";
@@ -127,4 +165,4 @@ function kirimRSVP(){
 function salinRek(){ navigator.clipboard.writeText('801001010401534'); alert('Nomor rekening 801001010401534 tersalin!'); }
 </script>
 </body>
-  </html>
+           </html>
