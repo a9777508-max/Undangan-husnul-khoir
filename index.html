@@ -1,202 +1,108 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walimatul 'Ursy - Husnul & Khoir</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Husnul & Khoir - 14 Maret 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#f3f0e8;color:#3a3a3a;text-align:center}
+.cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('foto-pengantin.jpg');background-size:cover;background-position:center;color:white;padding:20px}
+.cover h1{font-family:'Great Vibes',cursive;font-size:64px;line-height:1.05;margin:18px 0 10px}
+.guest-box{background:rgba(255,255,255,.18);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.4);padding:16px 24px;border-radius:16px;margin:18px 0}
+.btn{display:inline-block;background:#8a9a7a;color:white;padding:13px 30px;border-radius:30px;text-decoration:none;font-weight:600;border:none;cursor:pointer}
+section{padding:45px 22px;max-width:620px;margin:auto}
+h2{font-family:'Playfair Display',serif;color:#5a6b4d;font-size:28px}
+.divider{width:60px;height:2px;background:#c9a86a;margin:12px auto 20px}
+.card{background:white;border-radius:18px;padding:26px 20px;box-shadow:0 10px 30px rgba(0,0,0,.07);margin:18px 0;border:1px solid #e8dfc9}
+.nama{font-family:'Great Vibes',cursive;font-size:42px;color:#5a6b4d;line-height:1.2}
+.ortu{font-size:13px;line-height:1.7;margin-top:8px;color:#666}
+.count{display:flex;justify-content:center;gap:10px;margin-top:20px}
+.count div{background:#5a6b4d;color:white;border-radius:12px;padding:12px;width:68px}
+.count b{font-size:22px;display:block}
+.btn2{display:inline-block;background:#c9a86a;color:white;padding:11px 22px;border-radius:25px;text-decoration:none;font-size:14px;font-weight:600;margin:8px 4px;border:none;cursor:pointer}
+input,select,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin:8px 0;font-family:inherit}
+.music-btn{position:fixed;bottom:18px;right:18px;background:#5a6b4d;color:white;width:52px;height:52px;border-radius:50%;border:none;font-size:22px;z-index:99;cursor:pointer}
+footer{padding:30px 20px;font-size:12px;color:#888}
+</style>
 </head>
 <body>
 
-    <!-- Sampul Pembuka -->
-    <section id="cover" class="cover">
-        <div class="cover-content">
-            <p class="arabic-small">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
-            <p class="subtitle">Walimatul 'Ursy</p>
-            <h1 class="couple-title">Husnul & Khoir</h1>
-            <p class="date-cover">Ahad, 14 Maret 2027</p>
+<audio id="musik" loop><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"></audio>
+<button class="music-btn" onclick="toggleMusik()" id="btnMusik">🔊</button>
 
-            <div class="guest-box">
-                <p>Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                <h3 id="guest-name">Tamu Undangan</h3>
-            </div>
+<div class="cover" id="cover">
+  <small style="letter-spacing:4px;text-transform:uppercase;font-size:12px">Undangan Pernikahan</small>
+  <h1>Husnul<br>&<br>Muhammad Khoir</h1>
+  <p>Minggu, 14 Maret 2027 • Nusawungu, Cilacap</p>
+  <div class="guest-box"><small>Kepada Yth:</small><br><b id="namaTamu" style="font-size:18px">Bapak / Ibu / Saudara/i</b><br><small>Di Tempat</small></div>
+  <button class="btn" onclick="bukaUndangan()">💌 Buka Undangan</button>
+</div>
 
-            <button id="open-invitation" class="btn-primary">
-                <i class="fas fa-envelope-open-text"></i> Buka Undangan
-            </button>
-        </div>
-    </section>
+<div id="isi" style="display:none">
+<section>
+  <h2>Bismillahirrahmanirrahim</h2><div class="divider"></div>
+  <p style="font-size:14px;line-height:1.8">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami tercinta.</p>
+  <img src="foto-pengantin.jpg" style="width:100%;border-radius:16px;margin-top:20px;aspect-ratio:4/5;object-fit:cover" alt="Husnul & Khoir">
+</section>
 
-    <!-- Konten Utama -->
-    <main id="main-content" class="hidden">
+<section>
+  <div class="card"><div class="nama">Husnul Khotimah</div><div class="ortu">Putri ke-5 dari pasangan<br><b>Bapak Nurrochman Surip (Alm)</b><br>& <b>Ibu Sangirah</b></div></div>
+  <div style="font-family:'Great Vibes',cursive;font-size:38px;color:#c9a86a">&</div>
+  <div class="card"><div class="nama">Muhammad Khoir</div><div class="ortu">Putra Pertama dari pasangan<br><b>Bapak Jahrudin</b><br>& <b>Ibu Syahriah</b></div></div>
+</section>
 
-        <!-- Salam & Doa -->
-        <section class="section intro fade-in">
-            <div class="container">
-                <p class="arabic">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</p>
-                <h2 class="salam">Assalamu’alaikum Warahmatullahi Wabarakatuh</h2>
-                <p class="desc">
-                    Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan acara pernikahan putra-putri kami. Semoga Allah menjadikan rumah tangga mereka penuh ketenangan, cinta, dan kasih sayang:
-                </p>
-                <blockquote class="doa-arab">
-                    بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
-                </blockquote>
-                <p class="doa-arti">
-                    “Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah, serta mengumpulkan kalian berdua dalam kebaikan.” (HR. Abu Dawud)
-                </p>
-            </div>
-        </section>
+<section><h2>Menuju Hari Bahagia</h2><div class="divider"></div><div class="count"><div><b id="d">0</b><span>Hari</span></div><div><b id="h">0</b><span>Jam</span></div><div><b id="m">0</b><span>Menit</span></div><div><b id="s">0</b><span>Detik</span></div></div></section>
 
-        <!-- Mempelai -->
-        <section class="section couple fade-in">
-            <div class="container">
-                <h2 class="section-title">Mempelai</h2>
-                <div class="couple-grid">
-                    <div class="couple-card">
-                        <div class="avatar"><i class="fas fa-moon"></i></div>
-                        <h3 class="bride-groom-name">Husnul Khotimah</h3>
-                        <p class="child-order">Putri ke-5 dari pasangan</p>
-                        <p class="parents">Bapak Nurrochman Surip (Alm)<br>& Ibu Sangirah</p>
-                    </div>
+<section><h2>Detail Acara</h2><div class="divider"></div>
+  <div class="card"><h3 style="color:#5a6b4d">🤍 Akad Nikah</h3><p style="margin:10px 0;line-height:1.7">Minggu, 14 Maret 2027<br><b>08.00 - 09.00 WIB</b></p></div>
+  <div class="card"><h3 style="color:#5a6b4d">🎉 Resepsi</h3><p style="margin:10px 0;line-height:1.7">Minggu, 14 Maret 2027<br><b>09.00 WIB - Selesai</b></p></div>
+  <div class="card"><h3 style="color:#5a6b4d">📍 Lokasi</h3><p style="margin:10px 0;line-height:1.7">Kediaman Mempelai Wanita<br>Dusun Sikanco RT 02 / RW 05, Nusawungu, Cilacap</p><a class="btn2" href="https://www.google.com/maps/search/?api=1&query=Dusun+Sikanco+Nusawungu+Cilacap" target="_blank">📍 Buka Google Maps</a></div>
+</section>
 
-                    <div class="ampersand">&</div>
+<section><h2>Konfirmasi Kehadiran</h2><div class="divider"></div>
+  <div class="card"><input type="text" id="namaRSVP" placeholder="Nama Kamu"><select id="hadirRSVP"><option value="Hadir">Hadir</option><option value="Berhalangan">Berhalangan</option></select><textarea id="ucapanRSVP" placeholder="Ucapan / Doa untuk mempelai..."></textarea><button class="btn2" onclick="kirimRSVP()">Kirim via WhatsApp</button></div>
+</section>
 
-                    <div class="couple-card">
-                        <div class="avatar"><i class="fas fa-star-and-crescent"></i></div>
-                        <h3 class="bride-groom-name">Muhammad Khoir</h3>
-                        <p class="child-order">Putra pertama dari pasangan</p>
-                        <p class="parents">Bapak Jahrudin<br>& Ibu Syahriah</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section><h2>Kirim Hadiah</h2><div class="divider"></div>
+  <div class="card">
+    <p style="font-size:14px;line-height:1.7">Doa restu Anda adalah hadiah terindah.<br>Namun jika berkenan memberi tanda kasih:</p><br>
+    <div style="background:#f8f5ee;padding:18px;border-radius:12px;border:1px dashed #c9a86a">
+      <b style="color:#5a6b4d;font-size:16px">BRI</b><br>
+      <span style="font-size:20px;letter-spacing:1px;font-weight:600">801001010401534</span><br>
+      <small>a.n Muhamad Khoir</small>
+    </div><br>
+    <button class="btn2" onclick="salinRek()">📋 Salin No. Rekening</button>
+  </div>
+</section>
 
-        <!-- Hitung Mundur -->
-        <section class="section countdown-section fade-in">
-            <div class="container">
-                <h2 class="section-title">Menuju Hari Bahagia</h2>
-                <div class="countdown" id="countdown">
-                    <div class="time-box">
-                        <span id="days">00</span>
-                        <small>Hari</small>
-                    </div>
-                    <div class="time-box">
-                        <span id="hours">00</span>
-                        <small>Jam</small>
-                    </div>
-                    <div class="time-box">
-                        <span id="minutes">00</span>
-                        <small>Menit</small>
-                    </div>
-                    <div class="time-box">
-                        <span id="seconds">00</span>
-                        <small>Detik</small>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section><p style="font-size:14px;line-height:1.8">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai.</p><br><p>Hormat Kami,</p><div class="nama" style="font-size:34px">Husnul & Khoir</div></section>
+<footer>Made with Love • Husnul & Khoir • 14 Maret 2027</footer>
+</div>
 
-        <!-- Jadwal & Lokasi -->
-        <section class="section event fade-in">
-            <div class="container">
-                <h2 class="section-title">Waktu & Tempat Acara</h2>
-                <p class="event-date-header">Ahad, 14 Maret 2027</p>
-
-                <div class="event-grid">
-                    <div class="event-card">
-                        <i class="fas fa-mosque event-icon"></i>
-                        <h3>Akad Nikah</h3>
-                        <p class="time"><i class="far fa-clock"></i> 08.00 – 09.00 WIB</p>
-                        <hr>
-                        <p class="location-title">Kediaman Mempelai Perempuan</p>
-                        <p class="address">Dusun Sikanco RT 02 / RW 05, Kec. Nusawungu, Kab. Cilacap</p>
-                    </div>
-
-                    <div class="event-card">
-                        <i class="fas fa-praying-hands event-icon"></i>
-                        <h3>Resepsi</h3>
-                        <p class="time"><i class="far fa-clock"></i> 09.00 WIB – Selesai</p>
-                        <hr>
-                        <p class="location-title">Kediaman Mempelai Perempuan</p>
-                        <p class="address">Dusun Sikanco RT 02 / RW 05, Kec. Nusawungu, Kab. Cilacap</p>
-                    </div>
-                </div>
-
-                <div class="action-buttons">
-                    <a href="https://maps.app.goo.gl/CbDvwqzAxEaKuGm97" target="_blank" rel="noopener noreferrer" class="btn-outline">
-                        <i class="fas fa-map-marker-alt"></i> Buka Google Maps
-                    </a>
-                    <a href="https://wa.me/6285171630292?text=Assalamu'alaikum%2C%20saya%20ingin%20mengirimkan%20konfirmasi%20dan%20doa%20untuk%20walimatul%20'ursy%20Husnul%20%26%20Khoir." target="_blank" rel="noopener noreferrer" class="btn-outline">
-                        <i class="fab fa-whatsapp"></i> Konfirmasi WhatsApp
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tanda Kasih / Rekening -->
-        <section class="section gift-section fade-in">
-            <div class="container">
-                <h2 class="section-title">Tanda Kasih</h2>
-                <p class="desc">
-                    Bagi keluarga atau sahabat yang ingin berbagi tanda kasih, silakan menyalurkannya melalui nomor rekening berikut:
-                </p>
-
-                <div class="rekening-card">
-                    <p class="bank-label">Bank BRI</p>
-                    <div class="rekening-number-row">
-                        <span id="norek-text" class="norek-number">801001010401534</span>
-                        <button type="button" id="copy-norek" class="btn-copy">
-                            <i class="far fa-copy"></i> Salin
-                        </button>
-                    </div>
-                    <p class="an-text">a.n. Muhamad Khoir</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ucapan & Doa -->
-        <section class="section rsvp fade-in">
-            <div class="container">
-                <h2 class="section-title">Ucapan & Doa</h2>
-                <form id="wish-form" class="wish-form">
-                    <input type="text" id="sender-name" placeholder="Nama Anda" required>
-                    <select id="attendance" required>
-                        <option value="" disabled selected>Konfirmasi Kehadiran</option>
-                        <option value="InsyaAllah Hadir">InsyaAllah Hadir</option>
-                        <option value="Berhalangan Hadir">Berhalangan Hadir</option>
-                    </select>
-                    <textarea id="wish-message" rows="3" placeholder="Tuliskan doa dan ucapan untuk kedua mempelai..." required></textarea>
-                    <button type="submit" class="btn-primary">Kirim Ucapan</button>
-                </form>
-
-                <div id="wish-list" class="wish-list">
-                    <div class="wish-item">
-                        <div class="wish-header">
-                            <strong>Keluarga Besar</strong>
-                            <span class="badge">InsyaAllah Hadir</span>
-                        </div>
-                        <p>Barakallahu lakuma wa baraka 'alaikuma wa jama'a bainakuma fi khair. Semoga menjadi keluarga sakinah, mawaddah, warahmah.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Penutup -->
-        <footer class="footer">
-            <div class="container">
-                <p>Merupakan kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
-                <p class="salam-closing">Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
-                <h2 class="footer-names">Husnul & Khoir</h2>
-                <p class="wa-footer">WhatsApp Keluarga: <a href="https://wa.me/6285171630292" target="_blank" rel="noopener noreferrer">0851-7163-0292</a></p>
-            </div>
-        </footer>
-    </main>
-
-    <script src="script.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const to = params.get('to');
+if(to){ document.getElementById('namaTamu').innerText = decodeURIComponent(to); document.getElementById('namaRSVP').value = decodeURIComponent(to); }
+var target = new Date("2027-03-14T08:00:00").getTime();
+setInterval(function(){ var now=new Date().getTime(); var diff=target-now; if(diff<0)diff=0;
+document.getElementById("d").innerText=Math.floor(diff/(1000*60*60*24));
+document.getElementById("h").innerText=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+document.getElementById("m").innerText=Math.floor((diff%(1000*60*60))/(1000*60));
+document.getElementById("s").innerText=Math.floor((diff%(1000*60))/1000);},1000);
+let isPlaying=false;
+function bukaUndangan(){ document.getElementById('isi').style.display='block'; window.scrollTo({top:document.getElementById('isi').offsetTop,behavior:'smooth'}); toggleMusik(true); }
+function toggleMusik(forcePlay){ var audio=document.getElementById('musik'); if(forcePlay||!isPlaying){ audio.play(); isPlaying=true; document.getElementById('btnMusik').innerText='🔊'; } else { audio.pause(); isPlaying=false; document.getElementById('btnMusik').innerText='🔇'; } }
+function kirimRSVP(){
+  var nomorWA = "6285171630292";
+  var nama = document.getElementById('namaRSVP').value || document.getElementById('namaTamu').innerText;
+  var hadir = document.getElementById('hadirRSVP').value;
+  var ucapan = document.getElementById('ucapanRSVP').value;
+  var pesan = "Halo Husnul & Khoir, saya " + nama + " konfirmasi " + hadir + ". Ucapan: " + ucapan;
+  window.open("https://wa.me/"+nomorWA+"?text="+encodeURIComponent(pesan),"_blank");
+}
+function salinRek(){ navigator.clipboard.writeText('801001010401534'); alert('Nomor rekening 801001010401534 tersalin!'); }
+</script>
 </body>
-                    </html>
-                                                                                          
+    </html>
